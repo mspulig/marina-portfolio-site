@@ -60,6 +60,11 @@
   h3.block-heading, h4.block-heading { font-size: 62px; font-weight: 500; line-height: 1em; margin: 0; }
   @media (max-width: 767px) { h3.block-heading, h4.block-heading { font-size: 38px; line-height: 1.1em; } }
   .block-desc p { font-size: 22px; line-height: 1.5em; letter-spacing: -0.02em; color: var(--ink-soft); margin: 0; }
+  .summary-outcome { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--line); }
+  .summary-outcome p { font-size: 20px; line-height: 1.5em; letter-spacing: -0.02em; color: var(--ink-soft); margin: 0; }
+  .summary-outcome .so-label { font-size: 13px; line-height: 1em; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; color: var(--ink); margin-bottom: 0.9rem; }
+  @media (max-width: 800px) { .summary-outcome { grid-template-columns: 1fr; gap: 2rem; } }
+  @media (max-width: 767px) { .summary-outcome p { font-size: 16px; line-height: 1.75em; } }
   @media (max-width: 767px) { .block-desc p { font-size: 16px; line-height: 1.75em; } }
 
   .details-image { border-radius: 40px; overflow: hidden; margin: 2rem 0; aspect-ratio: 3/2; }
@@ -102,11 +107,9 @@
 
   <section class="details">
     <div class="content-max">
-      <div class="content-block summary-outcome">
-        <div class="block-desc">
-          <p><strong>Summary:</strong> Designed allbranded's turnkey branded-merch shop product, letting any B2B customer launch a fully branded store from a 10,000+ product catalogue without a design team or developer.</p>
-          <p><strong>Outcome:</strong> Shipped as a live product, with shops launching in 10-15 working days, HR-tool integrations (Personio, HiBob, SAP, Microsoft Dynamics 365) for automated onboarding, and a live dashboard for tracking orders, stock, and budgets.</p>
-        </div>
+      <div class="summary-outcome">
+        <div><p class="so-label">Summary</p><p>Designed allbranded's turnkey branded-merch shop product, letting any B2B customer launch a fully branded store from a 10,000+ product catalogue without a design team or developer.</p></div>
+        <div><p class="so-label">Outcome</p><p>Shipped as a live product, with shops launching in 10-15 working days, HR-tool integrations (Personio, HiBob, SAP, Microsoft Dynamics 365) for automated onboarding, and a live dashboard for tracking orders, stock, and budgets.</p></div>
       </div>
 
 
