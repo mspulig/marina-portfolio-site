@@ -73,7 +73,6 @@ nav .nav-links a:hover { color: var(--ink); }
 .nav-mobile-menu { display: none; position: absolute; top: 100%; right: 3rem; margin-top: 0.5rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0.75rem 1.25rem; z-index: 10; }
 .nav-mobile-menu.open { display: block; }
 .nav-mobile-menu a { color: var(--ink); text-decoration: none; font-size: 1.1rem; }
-nav { justify-content: flex-start; gap: 2rem; }
 .site-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.97); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .site-nav nav { padding-top: 1.25rem; padding-bottom: 1.25rem; }
 @media (max-width: 767px) { .site-nav nav { padding-top: 1rem; padding-bottom: 1rem; } }
@@ -149,6 +148,13 @@ nav { justify-content: flex-start; gap: 2rem; }
 <nav>
   <a class="logo" href="index.html">M&mdash;SP</a>
   <span class="nav-status">Berlin, Germany · Open to new roles</span>
+  <span class="nav-links"><a href="index.html#work">Works</a></span>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <a href="index.html#work">Works</a>
+  </div>
 </nav>
 </div>
 
