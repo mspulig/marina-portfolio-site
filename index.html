@@ -141,6 +141,9 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   .work-title { font-size: 1rem; font-weight: 400; color: var(--ink); text-decoration: none; }
   .work-year { font-size: 0.9rem; color: var(--ink-soft); }
   .work-desc { grid-column: 1 / -1; margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--ink-soft); }
+  .site-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.97); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+  .site-nav nav { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+  @media (max-width: 767px) { .site-nav nav { padding-top: 1rem; padding-bottom: 1rem; } }
   .nav-status { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--ink-soft); }
   .nav-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #3FB950; }
   @media (max-width: 767px) { .nav-status { display: none; } }
@@ -188,6 +191,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 </div>
 
+<div class="site-nav">
 <nav>
   <span class="logo">M&mdash;SP</span>
   <span class="nav-status">Berlin, Germany · Open to new roles</span>
@@ -199,6 +203,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     <a href="#work">Works</a>
   </div>
 </nav>
+</div>
 
 <main>
   <header class="hero">
