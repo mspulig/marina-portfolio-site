@@ -130,9 +130,17 @@ nav .nav-links a:hover { color: var(--ink); }
   .behance-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1rem; font-weight: 500; color: var(--ink); border-bottom: 1px solid var(--line); }
   .behance-link:hover { border-color: var(--ink); }
 
-  footer.cta { margin-top: 5rem; border-radius: 40px; background: var(--ink); color: var(--paper); padding: 4rem 3rem; text-align: center; }
-  footer.cta p.ready { font-size: 1rem; opacity: 0.6; margin: 0 0 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  footer.cta a.big-email { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 500; border-bottom: 2px solid currentColor; }
+  footer.cta { margin-top: 2rem; padding: 3rem 1rem 2rem; text-align: center; border-top: 1px solid var(--line); }
+  footer.cta p.ready { font-size: 0.8rem; opacity: 0.5; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  footer.cta a.big-email { display: inline-block; font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 500; color: var(--ink-soft); border-bottom: 1px solid var(--line); background: none; cursor: pointer; transition: color 0.2s ease, border-color 0.2s ease; }
+  footer.cta a.big-email:hover { color: var(--ink); border-color: var(--ink-soft); }
+  footer.cta a.big-email.copied { color: var(--ink); border-color: var(--ink); }
+  footer.cta .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
+  footer.cta .social-links a { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+  footer.cta .social-links a:hover { color: var(--ink); border-color: var(--ink-soft); }
+  footer.cta .footer-meta { margin: 2rem 0 0; font-size: 0.75rem; color: var(--ink-soft); opacity: 0.6; }
+  footer.cta .footer-meta a { color: inherit; text-decoration: underline; }
+  footer.cta .footer-meta a:hover { color: var(--ink); }
 </style>
 
 <div class="site-nav">
@@ -222,7 +230,12 @@ nav .nav-links a:hover { color: var(--ink); }
 
   <footer class="cta">
     <p class="ready">Get in touch</p>
-    <a class="big-email" href="mailto:marina.suranpulig@gmail.com">marina.suranpulig@gmail.com</a>
+    <a class="big-email" id="footer-email" href="mailto:marina.suranpulig@gmail.com" data-email="marina.suranpulig@gmail.com" data-label="marina.suranpulig@gmail.com">marina.suranpulig@gmail.com</a>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/marina-suran-pulig/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/marinasuran-pulig" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <p class="footer-meta">&copy; 2026 Marina Suran&#8209;Pulig. <a href="#top" id="back-to-top">Back to top</a></p>
   </footer>
 </main>
 
@@ -233,6 +246,24 @@ nav .nav-links a:hover { color: var(--ink); }
     h.addEventListener('click',function(){var o=m.classList.toggle('open');h.setAttribute('aria-expanded',o?'true':'false');});
     m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');h.setAttribute('aria-expanded','false');});});
   }
+})();
+</script>
+<script>
+(function(){
+  var emailLink = document.getElementById('footer-email');
+  if (!emailLink) return;
+  var email = emailLink.getAttribute('data-email'), label = emailLink.getAttribute('data-label'), timer = null;
+  emailLink.addEventListener('click', function(e){
+    e.preventDefault();
+    function showCopied(){
+      emailLink.textContent = 'Copied to clipboard'; emailLink.classList.add('copied');
+      clearTimeout(timer);
+      timer = setTimeout(function(){ emailLink.textContent = label; emailLink.classList.remove('copied'); }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(showCopied, function(){ window.location.href = 'mailto:' + email; });
+    } else { window.location.href = 'mailto:' + email; }
+  });
 })();
 </script>
 </body></html>
