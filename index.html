@@ -49,6 +49,23 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
   @media (max-width: 767px) { h1.name { font-size: 50px; } }
   p.tagline { font-size: 24px; font-weight: 400; line-height: 1.5em; letter-spacing: -0.02em; color: var(--ink-soft); margin: 0; }
   a.cv-link { display: inline-block; margin-top: 0.5rem; font-size: 1rem; font-weight: 500; border-bottom: 1.5px solid var(--ink); }
+  header.hero { padding: 1rem 0 3rem; }
+  .hero-text { align-items: flex-start; text-align: left; max-width: none; margin: 0; gap: 20px; }
+  h1.name { font-size: clamp(38px, 6vw, 86px); font-weight: 400; line-height: 1.02em; letter-spacing: -0.03em; color: #B3A596; }
+  h1.name .hero-statement { display: block; color: var(--ink); }
+  p.tagline { font-size: 18px; line-height: 1.4em; color: var(--ink-soft); }
+  .hero-intro { margin: 0; max-width: 640px; font-size: 20px; line-height: 1.5em; letter-spacing: -0.01em; color: var(--ink); }
+  .impact { display: flex; align-items: center; gap: 1.5rem; margin: 3.5rem 0 3rem; }
+  .impact-label { flex: 0 0 auto; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--ink); }
+  .impact-viewport { flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%); }
+  .impact-track { display: flex; width: max-content; animation: impact-scroll 45s linear infinite; }
+  .impact-viewport:hover .impact-track { animation-play-state: paused; }
+  .impact-dup { display: flex; }
+  .impact-item { display: inline-flex; align-items: center; gap: 0.65rem; margin-right: 2.5rem; white-space: nowrap; font-size: 1.05rem; color: var(--ink); }
+  .impact-item b { font-weight: 500; font-size: 1rem; background: #F3F1EC; border-radius: 999px; padding: 0.45rem 0.8rem; }
+  @keyframes impact-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (max-width: 700px) { .impact { flex-direction: column; align-items: flex-start; gap: 0.9rem; } .impact-viewport { width: 100%; flex: none; } .hero-intro { font-size: 17px; } }
+  @media (prefers-reduced-motion: reduce) { .impact-track { animation: none; flex-wrap: wrap; width: auto; row-gap: 0.75rem; } .impact-dup { display: none; } .impact-viewport { -webkit-mask-image: none; mask-image: none; } }
 
   .hero-gallery { display: flex; gap: 16px; margin-top: 80px; height: 1165px; }
 
@@ -178,9 +195,17 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 <main>
   <header class="hero">
     <div class="hero-text">
-      <h1 class="name">Marina<br>Suran&#8209;Pulig</h1>
       <p class="tagline">Product Designer (UX/UI), Berlin&#8209;based</p>
+      <h1 class="name">Marina Suran&#8209;Pulig<span class="hero-statement">Designing e&#8209;commerce that converts.</span></h1>
+      <p class="hero-intro">I'm a Product Designer who combines product thinking, design systems and e&#8209;commerce experience to turn complex flows into clear experiences people enjoy using.</p>
       <a class="cv-link" href="Marina-Suran-Pulig-CV.pdf" target="_blank">Download CV</a>
+    </div>
+
+    <div class="impact">
+      <span class="impact-label">Selected impact</span>
+      <div class="impact-viewport">
+        <div class="impact-track"><span class="impact-item"><b>+30%</b>E-commerce conversion</span><span class="impact-item"><b>0→1</b>Merch shop shipped</span><span class="impact-item"><b>5→1</b>Configurator steps</span><span class="impact-item"><b>3</b>Surfaces on one design system</span><span class="impact-item"><b>1</b>Login pattern, every market</span><span class="impact-item"><b>10–15</b>Days to a live branded shop</span><span class="impact-item"><b>10,000+</b>Products in the merch shop</span><span class="impact-item"><b>4.5:1</b>WCAG contrast standard</span><span class="impact-item"><b>10+</b>Years designing</span><span class="impact-dup" aria-hidden="true"><span class="impact-item"><b>+30%</b>E-commerce conversion</span><span class="impact-item"><b>0→1</b>Merch shop shipped</span><span class="impact-item"><b>5→1</b>Configurator steps</span><span class="impact-item"><b>3</b>Surfaces on one design system</span><span class="impact-item"><b>1</b>Login pattern, every market</span><span class="impact-item"><b>10–15</b>Days to a live branded shop</span><span class="impact-item"><b>10,000+</b>Products in the merch shop</span><span class="impact-item"><b>4.5:1</b>WCAG contrast standard</span><span class="impact-item"><b>10+</b>Years designing</span></span></div>
+      </div>
     </div>
 
     <div class="hero-gallery">
