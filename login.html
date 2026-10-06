@@ -138,17 +138,24 @@ nav .nav-links a:hover { color: var(--ink); }
   .multi-images .multi-image-frame img { width: 100%; height: 100%; object-fit: cover; }
   .multi-images .multi-image-caption { margin: 1.25rem 0 0; font-size: 20px; line-height: 1.5em; color: var(--ink-soft); letter-spacing: -0.01em; }
 
-  footer.cta { margin-top: 2rem; padding: 3rem 1rem 2rem; text-align: center; border-top: 1px solid var(--line); }
-  footer.cta p.ready { font-size: 0.8rem; opacity: 0.5; margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  footer.cta a.big-email { display: inline-block; font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 500; color: var(--ink-soft); border-bottom: 1px solid var(--line); background: none; cursor: pointer; transition: color 0.2s ease, border-color 0.2s ease; }
-  footer.cta a.big-email:hover { color: var(--ink); border-color: var(--ink-soft); }
-  footer.cta a.big-email.copied { color: var(--ink); border-color: var(--ink); }
-  footer.cta .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
-  footer.cta .social-links a { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
-  footer.cta .social-links a:hover { color: var(--ink); border-color: var(--ink-soft); }
-  footer.cta .footer-meta { margin: 2rem 0 0; font-size: 0.75rem; color: var(--ink-soft); opacity: 0.6; }
+  footer.cta { margin: 5rem 0 0; padding: 3.5rem 0 2rem; text-align: left; border-top: 1px solid var(--line); background: none; border-radius: 0; }
+  footer.cta .footer-main { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+  footer.cta .footer-status { display: inline-flex; align-items: center; gap: 0.6rem; margin: 0 0 1rem; font-size: 1.05rem; color: var(--ink); }
+  footer.cta .footer-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #3FB950; }
+  footer.cta p.ready { font-size: clamp(3rem, 8.5vw, 7.5rem); font-weight: 400; line-height: 1em; letter-spacing: -0.035em; color: var(--ink); margin: 0; text-transform: none; opacity: 1; }
+  footer.cta .footer-right { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 0.5rem; }
+  footer.cta .footer-row { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; align-items: start; }
+  footer.cta .footer-label { font-size: 1rem; color: var(--ink-soft); }
+  footer.cta a.big-email { display: inline-block; font-size: 1.15rem; font-weight: 400; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; border-bottom: 1px solid transparent; transition: border-color 0.2s ease, color 0.2s ease; width: fit-content; }
+  footer.cta a.big-email:hover { border-color: var(--ink); }
+  footer.cta a.big-email.copied { color: #3A6B45; border-color: #3A6B45; }
+  footer.cta .social-links { display: flex; flex-direction: column; gap: 1rem; margin: 0; }
+  footer.cta .social-links a { font-size: 1.15rem; color: var(--ink); width: fit-content; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; }
+  footer.cta .social-links a:hover { border-color: var(--ink); }
+  footer.cta .footer-meta { margin: 3.5rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.95rem; color: var(--ink-soft); }
   footer.cta .footer-meta a { color: inherit; text-decoration: underline; }
   footer.cta .footer-meta a:hover { color: var(--ink); }
+  @media (max-width: 800px) { footer.cta .footer-main { grid-template-columns: 1fr; gap: 2rem; } footer.cta .footer-row { grid-template-columns: 6rem 1fr; } }
 </style>
 
 <div class="site-nav">
@@ -257,11 +264,20 @@ nav .nav-links a:hover { color: var(--ink); }
   </section>
 
   <footer class="cta">
-    <p class="ready">Get in touch</p>
-    <a class="big-email" id="footer-email" href="mailto:marina.suranpulig@gmail.com" data-email="marina.suranpulig@gmail.com" data-label="marina.suranpulig@gmail.com">marina.suranpulig@gmail.com</a>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/marina-suran-pulig/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.behance.net/marinasuran-pulig" target="_blank" rel="noopener">Behance</a>
+    <div class="footer-main">
+      <div class="footer-left">
+        <p class="footer-status">Berlin, Germany · Open to new roles</p>
+        <p class="ready">Get in touch</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-row"><span class="footer-label">Email</span><a class="big-email" id="footer-email" href="mailto:marina.suranpulig@gmail.com" data-email="marina.suranpulig@gmail.com" data-label="marina.suranpulig@gmail.com">marina.suranpulig@gmail.com</a></div>
+        <div class="footer-row"><span class="footer-label">Social</span>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/marina-suran-pulig/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.behance.net/marinasuran-pulig" target="_blank" rel="noopener">Behance</a>
+          </div>
+        </div>
+      </div>
     </div>
     <p class="footer-meta">&copy; 2026 Marina Suran&#8209;Pulig. <a href="#top" id="back-to-top">Back to top</a></p>
   </footer>
